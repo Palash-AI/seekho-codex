@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #000000;
+  color: #ffffff;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+@layer components {
+  .screen {
+    @apply min-h-screen bg-seekho-bg text-seekho-text;
+  }
+
+  .mobile-shell {
+    @apply mx-auto w-full max-w-seekhoShell min-h-screen border-x border-default bg-app;
+  }
+
+  .section-title {
+    @apply text-section text-primary;
+  }
+
+  .screen-title {
+    @apply text-display text-primary;
+  }
+
+  .card-title {
+    @apply text-cardTitle text-primary;
+  }
+
+  .body-copy {
+    @apply text-body text-secondary;
+  }
+
+  .caption-copy {
+    @apply text-caption text-muted;
+  }
+
+  .seekho-card {
+    @apply rounded-card border border-default bg-surface shadow-card;
+  }
+
+  .seekho-button-primary {
+    @apply rounded-seekhoButton gradient-appBg px-5 py-3 text-button font-semibold text-white transition duration-seekhoMedium ease-seekho focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgba(245,10,202,0.35)] active:scale-[0.98] enabled:shadow-cta disabled:bg-[rgba(255,255,255,0.08)] disabled:text-[rgba(255,255,255,0.4)] disabled:shadow-none disabled:active:scale-100;
+  }
+
+  .seekho-button-secondary {
+    @apply rounded-seekhoButton border border-[#F50ACA] bg-transparent px-5 py-3 text-button font-semibold text-[#F50ACA] transition duration-seekhoMedium ease-seekho focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgba(245,10,202,0.35)];
+  }
+
+  .chip {
+    @apply h-8 rounded-seekhoChip border border-default bg-elevated px-3 text-body text-secondary;
+  }
+}

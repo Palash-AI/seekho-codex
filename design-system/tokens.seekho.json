@@ -1,0 +1,107 @@
+{
+  "brand": {
+    "name": "Seekho",
+    "themeModes": ["dark", "light"],
+    "notes": "Dark-first. Gradient-led accents. High contrast. Mobile-first."
+  },
+  "colors": {
+    "neutral": {
+      "white": "#FFFFFF",
+      "black": "#000000"
+    },
+    "accent": {
+      "primary": "#F50ACA",
+      "secondary": "#7F09D6",
+      "tertiary": "#D3AF37",
+      "onAccent": "#FFFFFF"
+    },
+    "bg": {
+      "primary": "#000000",
+      "secondary": "#0B0B0B"
+    },
+    "surface": {
+      "default": "#111111",
+      "elevated": "#1A1A1A"
+    },
+    "border": {
+      "default": "rgba(255,255,255,0.08)",
+      "strong": "rgba(255,255,255,0.14)"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "rgba(255,255,255,0.72)",
+      "muted": "rgba(255,255,255,0.48)",
+      "disabled": "rgba(255,255,255,0.40)"
+    },
+    "semantic": {
+      "success": "#22C55E",
+      "warning": "#F59E0B",
+      "error": "#EF4444",
+      "info": "#3B82F6"
+    },
+    "overlay": {
+      "scrim": "rgba(0,0,0,0.60)"
+    }
+  },
+  "gradients": {
+    "appBg": "linear-gradient(90deg, #7F09D6 0%, #F50ACA 100%)",
+    "cardHero": "linear-gradient(90deg, #7F09D6 0%, #F50ACA 50%, #D3AF37 100%)",
+    "ctaGlow": "radial-gradient(circle, rgba(245,10,202,0.35) 0%, rgba(127,9,214,0.00) 70%)"
+  },
+  "typography": {
+    "fontFamily": {
+      "ui": "Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif",
+      "logo": "Almaz, serif"
+    },
+    "scale": {
+      "display": { "size": 20, "lineHeight": 28, "weight": 600, "letterSpacing": "0em" },
+      "title": { "size": 16, "lineHeight": 20, "weight": 500, "letterSpacing": "0em" },
+      "section": { "size": 14, "lineHeight": 18, "weight": 500, "letterSpacing": "0em" },
+      "cardTitle": { "size": 14, "lineHeight": 20, "weight": 600, "letterSpacing": "0em" },
+      "body": { "size": 12, "lineHeight": 16, "weight": 400, "letterSpacing": "0em" },
+      "caption": { "size": 10, "lineHeight": 14, "weight": 400, "letterSpacing": "0em" },
+      "button": { "size": 14, "lineHeight": 18, "weight": 600, "letterSpacing": "0em" }
+    },
+    "truncation": {
+      "titleMaxLines": 2,
+      "subtitleMaxLines": 2,
+      "captionMaxLines": 1
+    }
+  },
+  "space": {
+    "1": 4,
+    "2": 8,
+    "3": 12,
+    "4": 16,
+    "5": 20,
+    "6": 24,
+    "8": 32,
+    "10": 40,
+    "12": 48
+  },
+  "radius": {
+    "card": 16,
+    "button": 12,
+    "chip": 999,
+    "sheet": 20,
+    "input": 12
+  },
+  "shadow": {
+    "card": "0 4px 12px rgba(0,0,0,0.35)",
+    "elevated": "0 8px 24px rgba(0,0,0,0.50)",
+    "cta": "0 0 24px rgba(245,10,202,0.45)",
+    "flagshipGlow": "0 0 40px rgba(127,9,214,0.60)"
+  },
+  "motion": {
+    "duration": { "fast": 120, "medium": 240, "slow": 360 },
+    "easing": { "standard": "cubic-bezier(0.4, 0, 0.2, 1)" },
+    "pressScale": 0.98
+  },
+  "layout": {
+    "canvasWidth": 390,
+    "maxShellWidth": 480,
+    "screenPaddingX": 16,
+    "sectionGapY": 24,
+    "stickyCtaBottomOffset": 16
+  }
+}
