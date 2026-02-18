@@ -40,7 +40,9 @@ export type AnalyticsEventName =
   | "Paywall_Shown"
   | "Trial_Started"
   | "Mission_Completed"
-  | "Streak_Incremented";
+  | "Streak_Incremented"
+  | "AI_Practice_Clicked"
+  | "AI_LearnNew_Clicked";
 
 export interface AnalyticsEvent {
   id: string;

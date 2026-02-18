@@ -102,7 +102,7 @@ module.exports = {
         seekhoSlow: "360ms"
       },
       maxWidth: {
-        seekhoShell: "480px"
+        seekhoShell: "390px"
       }
     }
   },

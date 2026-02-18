@@ -19,7 +19,6 @@ export default function MissionGeneratingPage() {
   const { state, hydrated } = useAppState();
   const [frameIndex, setFrameIndex] = useState(0);
   const trackedRef = useRef(false);
-  const startedRef = useRef(false);
 
   const selectedMissionId = useMemo(() => state.selectedMissionId, [state.selectedMissionId]);
 
@@ -39,23 +38,23 @@ export default function MissionGeneratingPage() {
       trackedRef.current = true;
     }
 
-    if (startedRef.current) return;
-    startedRef.current = true;
+    setFrameIndex(0);
+    let nextIndex = 0;
 
-    const progressTimers = progressFrames.slice(1).map((_, index) =>
-      window.setTimeout(() => {
-        const nextIndex = index + 1;
-        setFrameIndex((prev) => Math.max(prev, nextIndex));
-      }, (index + 1) * 620)
-    );
+    const progressTimer = window.setInterval(() => {
+      nextIndex += 1;
+      setFrameIndex(nextIndex);
 
-    const routeTimer = window.setTimeout(() => {
-      router.push("/mission/reveal");
-    }, 3200);
+      if (nextIndex >= progressFrames.length - 1) {
+        window.clearInterval(progressTimer);
+        window.setTimeout(() => {
+          router.push("/mission/reveal");
+        }, 300);
+      }
+    }, 620);
 
     return () => {
-      progressTimers.forEach((timer) => window.clearTimeout(timer));
-      window.clearTimeout(routeTimer);
+      window.clearInterval(progressTimer);
     };
   }, [hydrated, router, state.selectedLevel, state.selectedMissionId]);
 

@@ -2,23 +2,30 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { useAppState } from "@/components/providers/app-provider";
 import { PageLoader } from "@/components/ui/page-loader";
+import { APP_STATE_KEY } from "@/lib/state";
+
+type StoredState = {
+  hasSeenMissionEntry?: boolean;
+};
 
 export default function RootPage() {
   const router = useRouter();
-  const { state, hydrated } = useAppState();
 
   useEffect(() => {
-    if (!hydrated) return;
+    try {
+      const raw = window.localStorage.getItem(APP_STATE_KEY);
+      if (!raw) {
+        router.replace("/mission/entry");
+        return;
+      }
 
-    if (!state.hasSeenMissionEntry) {
+      const parsed = JSON.parse(raw) as StoredState;
+      router.replace(parsed.hasSeenMissionEntry ? "/home" : "/mission/entry");
+    } catch {
       router.replace("/mission/entry");
-      return;
     }
-
-    router.replace("/home");
-  }, [hydrated, router, state.hasSeenMissionEntry]);
+  }, [router]);
 
   return <PageLoader label="Setting up your mission..." />;
 }
